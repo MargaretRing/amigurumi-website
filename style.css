@@ -1,0 +1,460 @@
+:root {
+    --yellow: #FFF9DD;
+    --lightpink: #FFEEF4;
+    --pink: #FF4281;
+    --darkpink: #A80038;
+    --blue: #005694;
+    --darkblue: #003E6B;
+    --green: #1FA31F;
+    --darkgreen: #105B10;
+    --white: #FFFFFF;
+}
+
+body {
+    margin: 0;
+    font-family: "Trebuchet MS", sans-serif;
+    background-color: var(--yellow);
+    color: var(--darkpink);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    margin-top: 40px;
+    padding: 0 40px;
+    box-sizing: border-box;
+    flex: 1;
+}
+
+button {
+    background-color: var(--blue);
+    color: var(--white);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--darkgreen);
+}
+
+.extra-text {
+    font-size: 18px;
+    max-width: 900px;
+    margin: 0 auto 30px;
+}
+
+/*----------------------navbar----------------------*/
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    background-color: var(--lightpink);
+    padding: 30px 50px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 60px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--darkpink);
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.nav-links a:hover {
+    color: var(--darkblue);
+}
+
+.logo {
+    height: 50px;
+}
+
+/*----------------------footer----------------------*/
+
+footer{
+    text-align: center;
+    background-color: var(--lightpink);
+    color: var(--darkpink);
+    padding: 16px;
+}
+
+/*----------------------creator----------------------*/
+
+.editor {
+    display: flex;
+    height: 60vh;
+    align-items: stretch;
+    gap: 30px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+#workspace {
+    flex: 1;
+    position: relative;
+    border: 2px dashed var(--green);
+    background-color: var(--white);
+    overflow: hidden;
+    border-radius: 50px;
+    margin: 0;
+    min-width: 0;
+}
+
+/*----------------------options----------------------*/
+
+.panel {
+    width: 160px;
+    flex-shrink: 0;
+    padding: 10px;
+}
+
+.panel.right {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 40px;
+}
+
+.panel.right button {
+    width: 100%;
+}
+
+input[type="range"] {
+    width: 100%;
+    accent-color: var(--darkpink);
+    margin: 4px 0 12px 0;
+    cursor: pointer;
+    background: var(--white);
+    appearance: none;
+    border: 1.5px solid var(--pink);
+    border-radius: 10px;
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 2px;
+    color: var(--darkpink);
+}
+
+#nameInput {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 2px solid var(--pink);
+    background-color: var(--lightpink);
+    color: var(--darkpink);
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 13px;
+    outline: none;
+    margin-top: 4px;
+}
+
+#nameInput:focus {
+    border-color: var(--blue);
+}
+
+.color-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    margin-top: 6px;
+}
+
+.color-swatch {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid transparent;
+    box-sizing: border-box;
+    transition: transform 0.1s;
+    outline: 1.7px solid rgba(0, 0, 0, 0.6);
+}
+
+.btn-disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.panel.left {
+    padding-top: 40px;
+    transition: opacity 0.2s;
+}
+
+.panel.left.dimmed label,
+.panel.left.dimmed input,
+.panel.left.dimmed h3 {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.color-swatch:hover {
+    transform: scale(1.15);
+}
+
+.color-swatch.selected {
+    border-color: var(--white);
+    outline: 2px solid var(--pink);
+}
+
+/*----------------------sphere stuff----------------------*/
+
+.sphere {
+    position: absolute;
+    cursor: grab;
+    box-sizing: border-box;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+.sphere.selected {
+    outline: 3px solid var(--dark, --pink);
+}
+
+
+/*----------------------pattern----------------------*/
+
+.pattern {
+    background-color: var(--yellow);
+    border-radius: 10px;
+    padding: 10px 14px;
+    flex: 0 1 auto;
+    width: fit-content;
+    min-width: 200px;
+}
+
+#patternSection {
+    background-color: var(--lightpink);
+    border-radius: 40px;
+    padding: 40px 35px;
+    margin: 40px auto;
+    max-width: 1400px;
+}
+
+#patternHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--pink);
+    padding-bottom: 25px;
+}
+
+#patternHeader h2 {
+    margin: 0;
+    color: var(--darkpink);
+}
+
+#exportButtons {
+    display: flex;
+    gap: 10px;
+}
+
+#patterns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: flex-start;
+}
+
+/*----------------------home page----------------------*/
+
+.home-title {
+    font-size: 64px;
+    margin-bottom: 16px;
+}
+
+.home-subtitle {
+    font-size: 20px;
+    color: var(--darkpink);
+    margin-bottom: 40px;
+}
+
+.homebuttons {
+    padding: 16px 40px;
+    font-size: 20px;
+    width: 280px;
+}
+
+/*----------------------example page----------------------*/
+
+.examples-page {
+    background-color:var(--white);
+}
+
+.example-container {
+    background-color: var(--yellow);
+    border-radius: 30px;
+    padding: 20px 60px;
+    margin: 40px auto;
+    max-width: 1200px;
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.example-container p {
+    text-align: center;
+    font-size: 20px;
+}
+
+.example-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.example-row img {
+    max-height: 400px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.example-row div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+.cat-parts-row {
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.cat-part img {
+    max-height: 300px;
+    width: auto;
+}
+
+.cat-part:last-child img {
+    max-height: 250px;
+}
+
+.cat-part p {
+    margin: 0;
+    font-weight: bold;
+    color: var(--darkpink);
+    font-size: 18px;
+}
+
+.sphere-img {
+    max-height: 250px !important;
+    margin-top: 80px;
+    margin-left: 80px;
+}
+
+/*----------------------about page----------------------*/
+
+.about-main {
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 auto 40px;
+    max-width: 1200px;
+}
+
+.pseudocode {
+    background-color: var(--lightpink);
+    border-radius: 20px;
+    padding: 20px 30px;
+    padding-right: 80px;
+    padding-top: 30px;
+    font-family: monospace;
+    font-size: 16px;
+    color: var(--darkpink);
+    text-align: left;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.glossary-table {
+    font-size: 16px;
+    border: 2px solid var(--lightpink);
+    border-radius: 10px
+}
+
+.glossary-table th {
+    background-color: var(--lightpink);
+    color: var(--darkpink);
+    padding: 10px 20px;
+    border: 3px solid var(--white);
+}
+
+.glossary-table td {
+    padding: 8px 20px;
+    background-color: var(--lightpink);
+    color: var(--darkpink);
+    border: 3px solid var(--white);
+}
+
+.glossary-table tr:first-child td {
+    border-radius: 0;
+}
+
+.variable-cards {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto 60px;
+    max-width: 1100px;
+}
+
+.variable-card {
+    background-color: var(--lightpink);
+    border-radius: 16px;
+    padding: 20px 24px;
+    flex: 1 1 280px;
+    max-width: 340px;
+    text-align: center;
+}
+
+.variable-card h3 {
+    color: var(--darkpink);
+    margin-top: 0;
+}
+
+.variable-examples {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+
+.variable-example {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.example-sphere {
+    background-color: var(--green);
+    border: 2px solid var(--darkgreen);
+}
