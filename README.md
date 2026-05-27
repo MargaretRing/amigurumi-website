@@ -13,8 +13,6 @@ https://github.com/user-attachments/assets/6a4c1d29-905b-4171-8b68-909a75783c40
 
 The algorithm behind creating different crocheted 3D shapes is surprisingly simple. It can be written in pseudocode like this:
 
-'''
-
     Starting_Stitches = 6
     Increase_Rounds = 3
     Additional_Flat_Rounds = 0
@@ -36,7 +34,5 @@ The algorithm behind creating different crocheted 3D shapes is surprisingly simp
         for Starting_Stitches:
             sc * round, dec
         round -= 1
-        
-'''
 
 Changing the variables deforms and scales the shape in different ways.
